@@ -7,9 +7,13 @@ export const BackDrop = styled.div`
 `;
 
 export const CenterStage = styled.div`
-  height: 99.8%;
-  width: 99.8%;
-  margin: 0.1%;
+  height: 100%;
+  width: 100%;
+`;
+
+export const SpotLight = styled.div`
+  height: 90%;
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;

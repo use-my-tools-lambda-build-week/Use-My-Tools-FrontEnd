@@ -1,5 +1,5 @@
 import { combineReducers } from 'redux';
-import { adderReducer } from './AdderReducer';
+import { SubmitReducer } from './SubmitReducer';
 
 export default combineReducers({
   
