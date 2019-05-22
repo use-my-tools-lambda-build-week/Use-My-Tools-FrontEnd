@@ -1,6 +1,10 @@
 import { combineReducers } from 'redux';
-import { SubmitReducer } from './SubmitReducer';
+import { toolsReducers } from './toolsReducer';
+import { toolReducers } from './toolReducer';
+import { usersReducers } from './usersReducer';
+import { userReducers } from './userReducer';
 
 export default combineReducers({
-  
+  toolsReducers, toolReducers,
+  usersReducers, userReducers,
 });
