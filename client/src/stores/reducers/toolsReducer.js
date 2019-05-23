@@ -16,7 +16,7 @@ export const toolsReducers = (state = iniState, action) => {
     case TOOLS_SUCCESS:
       return {
         ...state,
-        tools: [ ...action.payload ],
+        tools: [ ...action.payload.tools ],
         fetchingTools: false
       };
     case TOOLS_FAILURE:

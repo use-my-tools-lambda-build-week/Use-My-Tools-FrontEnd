@@ -1,7 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import Tool from './Tool';
+import { Link } from 'react-router-dom';
 import { deleteTool } from '../../stores/actions';
+import { Toolshed, Toolbox } from '../../styles/ToolStyling';
 
 class Tools extends React.Component {
   deleteHandler = (e, tool) => {
@@ -14,26 +15,34 @@ class Tools extends React.Component {
 
   render() {
     return (
-      <div>
+      <Toolshed>
         {this.props.tools.map(tool => {
           console.log(tool);
           return (
-            <div>
-              <div key={tool.id}>
-                <Tool tool={tool} />
-                <div>
-                  <button
-                    type='submit'
-                    onClick={e => this.deleteHandler(e, tool.id)}
-                  >Remove Tool</button>
-                </div>
-              </div>
+            <div key={tool.id}>
+              <ToolIcon
+                key={tool.id}
+                tool={tool}
+                deleteHandler={e => this.deleteHandler(e, tool.id)}
+              />
             </div>
           );
         })}
-      </div>
+      </Toolshed>
     );
   };
+};
+
+function ToolIcon({ tool }) {
+  const { id, userId, toolName, imageUrl } = tool;
+  return (
+    <Link to={`/tool/${id}`}>
+      <Toolbox>
+        <h3>{toolName}</h3>
+        <img src={imageUrl} alt={`A ${toolName}`} />
+      </Toolbox>
+    </Link>
+  );
 };
 
 export default connect(null, { deleteTool })(Tools);

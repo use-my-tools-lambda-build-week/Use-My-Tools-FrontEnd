@@ -7,7 +7,7 @@ export const TOOL_FAILURE = 'TOOL_FAILURE';
 export const fetchTool = tool => dispatch => {
   dispatch({ type: TOOL_FETCH });
   axios
-    .pull(`https://rent-mytools.herokuapp.com/api/tool/:id`, tool)
+    .get(`https://rent-mytools.herokuapp.com/api/tool/${tool.id}`, tool)
     .then(res => {
       console.log(res.data);
       dispatch({ type: TOOL_SUCCESS, payload: res.data });

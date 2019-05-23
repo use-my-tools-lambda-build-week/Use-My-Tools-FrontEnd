@@ -7,7 +7,7 @@ export const BackDrop = styled.div`
 `;
 
 export const CenterStage = styled.div`
-  height: 100%;
+  height: 90%;
   width: 100%;
 `;
 

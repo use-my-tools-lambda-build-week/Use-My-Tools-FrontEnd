@@ -1,15 +1,25 @@
 import React from 'react';
 
+/* 
+  <div>
+    <button
+      type='submit'
+      onClick={e => this.deleteHandler(e, tool.id)}
+    >Remove Tool</button>
+  </div>
+*/
+
 const Tool = props => (
   <div>
-    {/* <img>{props.img}</img> */}
+    <img src={props.imageUrl} alt={`A ${props.tool}.`}/>
     <div>
-      {props.name}
+      {props.toolName}
       {props.requests}
     </div>
     <div>{props.price}</div>
-    <div>{props.deposit}</div>
+    <div>{props.deposits}</div>
     <div>{props.description}</div>
+    <div>{props.isRented}</div>
   </div>
 );
 

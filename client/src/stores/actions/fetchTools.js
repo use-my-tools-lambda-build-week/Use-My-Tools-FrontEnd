@@ -14,6 +14,6 @@ export const fetchTools = () => dispatch => {
     })
     .catch(err => {
       console.error(err);
-      dispatch({ type: TOOLS_FAILURE, payload: err })
+      dispatch({ type: TOOLS_FAILURE, payload: err });
     });
 };
